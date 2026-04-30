@@ -1,9 +1,9 @@
 ---
 const floatingImages = [
-  { src: '/images/llaveros/llavero-01.jpg',      alt: 'Llavero polaroid personalizado', cls: 'top-[18%] right-[6%] w-32 md:w-44 animate-float shadow-neb-purple' },
-  { src: '/images/lamparas/lampara-01.jpg',       alt: 'Lámpara decorativa impresa en 3D', cls: 'top-[42%] right-[18%] w-28 md:w-36 animate-float-slow shadow-neb-blue' },
-  { src: '/images/coleccionables/coleccionable-01.jpg', alt: 'Figura coleccionable 3D', cls: 'top-[65%] right-[5%] w-24 md:w-32 animate-float shadow-neb-purple' },
-  { src: '/images/avatars/avatar-01.jpg',         alt: 'Avatar personalizado 3D', cls: 'top-[28%] right-[36%] w-20 md:w-28 animate-float-slow shadow-neb-mauve hidden lg:block' },
+  { src: '/images/llaveros/llavero-01.jpg',      alt: 'Llavero polaroid personalizado', cls: 'top-[8%]  right-[8%]  w-32 md:w-56 animate-float      shadow-neb-purple  rotate-3' },
+  { src: '/images/lamparas/lampara-01.jpg',       alt: 'Lámpara decorativa impresa en 3D', cls: 'top-[52%] right-[5%]  w-28 md:w-35 animate-float-slow  shadow-neb-blue   -rotate-2' },
+  { src: '/images/coleccionables/coleccionable-01.jpg', alt: 'Figura coleccionable 3D', cls: 'top-[12%] left-[7%]  w-28 md:w-32 animate-float      shadow-neb-purple  -rotate-3' },
+  { src: '/images/B2B/b2b-01.jpg',               alt: 'Producto Nebulab 3D', cls: 'top-[55%] left-[4%]  w-24 md:w-48 animate-float-slow  shadow-neb-mauve    rotate-2', id: 'hero-random-img' },
 ];
 ---
 
@@ -40,6 +40,7 @@ const floatingImages = [
     <div class={`absolute ${img.cls} pointer-events-none z-10 hidden lg:block`}>
       <div class="relative">
         <img src={img.src} alt={img.alt} loading="lazy" decoding="async"
+             id={img.id ?? undefined}
              class="img-retro rounded-xl w-full shadow-2xl
                     ring-1 ring-neb-purple/30 dark:ring-neb-purple/50
                     object-cover aspect-square" />
@@ -108,6 +109,34 @@ const floatingImages = [
 
 <!-- ── Star generation script ── -->
 <script>
+  // ── Random floating product image ──
+  const randomPool = [
+    '/images/B2B/b2b-01.jpg','/images/B2B/b2b-02.jpg','/images/B2B/b2b-03.jpg',
+    '/images/B2B/b2b-04.jpg','/images/B2B/b2b-05.jpg','/images/B2B/b2b-06.jpg',
+    '/images/B2B/b2b-07.jpg','/images/B2B/b2b-08.jpg','/images/B2B/b2b-09.jpg',
+    '/images/B2B/b2b-10.jpg','/images/B2B/b2b-11.jpg','/images/B2B/b2b-12.jpg',
+    '/images/B2B/b2b-13.jpg','/images/B2B/b2b-14.jpg',
+    '/images/regalos-corporativos/corporativo-01.jpg','/images/regalos-corporativos/corporativo-02.jpg',
+    '/images/regalos-corporativos/corporativo-03.jpg','/images/regalos-corporativos/corporativo-04.jpg',
+    '/images/regalos-corporativos/corporativo-05.jpg','/images/regalos-corporativos/corporativo-06.jpg',
+    '/images/regalos-corporativos/corporativo-07.jpg','/images/regalos-corporativos/corporativo-08.jpg',
+    '/images/regalos-corporativos/corporativo-09.jpg',
+    '/images/temporadas/temporada-01.jpg','/images/temporadas/temporada-02.jpg',
+    '/images/temporadas/temporada-03.jpg','/images/temporadas/temporada-04.jpg',
+    '/images/temporadas/temporada-05.jpg','/images/temporadas/temporada-06.jpg',
+    '/images/temporadas/temporada-07.jpg','/images/temporadas/temporada-08.jpg',
+    '/images/temporadas/temporada-09.jpg','/images/temporadas/temporada-10.jpg',
+    '/images/temporadas/temporada-11.jpg','/images/temporadas/temporada-12.jpg',
+    '/images/temporadas/temporada-13.jpg','/images/temporadas/temporada-14.jpg',
+    '/images/macetas/maceta-01.jpg','/images/macetas/maceta-02.jpg',
+    '/images/macetas/maceta-03.jpg','/images/macetas/maceta-04.jpg',
+    '/images/macetas/maceta-05.jpg',
+  ];
+  const randomImg = document.getElementById('hero-random-img') as HTMLImageElement | null;
+  if (randomImg) {
+    randomImg.src = randomPool[Math.floor(Math.random() * randomPool.length)];
+  }
+
   const container = document.getElementById('stars-container');
   if (container) {
     for (let i = 0; i < 80; i++) {
