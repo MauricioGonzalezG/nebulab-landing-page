@@ -1,6 +1,6 @@
 ---
 ---
-<nav id="navbar" class="fixed top-0 inset-x-0 z-50 py-3 px-6 md:px-12 flex items-center justify-between">
+<nav id="navbar" class="fixed top-0 inset-x-0 z-50 py-3 px-4 md:px-6 lg:px-12 flex items-center justify-between">
 
   <!-- ── Logo ── -->
   <a href="#" class="flex items-center group" aria-label="Nebulab 3D inicio">
@@ -21,12 +21,13 @@
   </a>
 
   <!-- ── Desktop links ── -->
-  <ul class="hidden md:flex items-center gap-8">
+  <ul class="hidden md:flex items-center gap-4 lg:gap-8">
     {[
       ['#servicios','Servicios'],
       ['#galeria',  'Galería'],
       ['#nosotros', 'Nosotros'],
       ['#contacto', 'Contacto'],
+      ['#studio',   'Nebulab Studio'],
     ].map(([href, label]) => (
       <li>
         <a href={href}
@@ -96,6 +97,7 @@
       ['#galeria',  'Galería'],
       ['#nosotros', 'Nosotros'],
       ['#contacto', 'Contacto'],
+      ['#studio',   'Nebulab Studio'],
     ].map(([href, label]) => (
       <li>
         <a href={href} onclick="window.closeMobileMenu()"

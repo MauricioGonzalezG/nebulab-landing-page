@@ -4,7 +4,7 @@
   <div class="max-w-7xl mx-auto">
 
     <!-- Top row -->
-    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-10">
 
       <!-- Logo + tagline -->
       <div class="flex flex-col gap-2">
@@ -34,6 +34,7 @@
             ['#nosotros',  'Nosotros'],
             ['#valores',   'Valores'],
             ['#contacto',  'Contacto'],
+            ['#studio',    'Nebulab Studio'],
           ].map(([href, label]) => (
             <li>
               <a href={href}
@@ -46,6 +47,16 @@
           ))}
         </ul>
       </nav>
+
+      <a href="https://nebulab-customs.vercel.app/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex cursor-pointer items-center gap-2 border border-sky-300/25 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-neb-cyan transition-colors hover:border-sky-300 hover:text-sky-300 dark:text-sky-300">
+         Abrir Nebulab Studio
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17L17 7M7 7h10v10" />
+        </svg>
+      </a>
 
       <!-- Social links -->
       <div class="flex items-center gap-3">
